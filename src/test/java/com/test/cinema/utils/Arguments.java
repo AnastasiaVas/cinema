@@ -45,9 +45,9 @@ public class Arguments {
     }
 
     private static Stream<org.junit.jupiter.params.provider.Arguments> argumentsForFindOrderByCriteria() {
-        OrderDTO orderDTO1 = new OrderDTO(100, 100, 3);
-        OrderDTO orderDTO2 = new OrderDTO(101, 101, 1);
-        OrderDTO orderDTO3 = new OrderDTO(102, 101, 5);
+        OrderDTO orderDTO1 = new OrderDTO(100, 100, 3,2345678901L);
+        OrderDTO orderDTO2 = new OrderDTO(101, 101, 1, 2345675801L);
+        OrderDTO orderDTO3 = new OrderDTO(102, 101, 5, 234580015L);
 
         List<SearchCriteria> searchCriteria1 = new ArrayList<>();
         searchCriteria1.add(new SearchCriteria("id", "=", 101, true));

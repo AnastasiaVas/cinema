@@ -54,6 +54,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: number
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
                   name: create_date
                   type: timestamp without time zone
               - column:
@@ -132,6 +137,9 @@ databaseChangeLog:
                   name: quantity
                   value: 3
               - column:
+                  name: number
+                  value: 2345678901
+              - column:
                   name: create_date
                   value: '2022-10-04 20:51:02'
             tableName:  orders
@@ -146,6 +154,9 @@ databaseChangeLog:
               - column:
                   name: quantity
                   value: 1
+              - column:
+                  name: number
+                  value: 2345675801
               - column:
                   name: create_date
                   value: '2022-6-04 20:51:02'
@@ -164,6 +175,9 @@ databaseChangeLog:
               - column:
                   name: quantity
                   value: 5
+              - column:
+                  name: number
+                  value: 234580015
               - column:
                   name: create_date
                   value: '2022-6-04 20:51:02'

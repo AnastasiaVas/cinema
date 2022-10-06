@@ -44,6 +44,7 @@ class OrdersServiceTest {
     private static OrderEntity orderEntity;
 
     private static Integer ticketQuantity;
+    private static Long orderNumber;
     private static Timestamp createDate;
     private static OrderDTO orderDTO;
     private static MovieDTO movieDTO;
@@ -74,9 +75,10 @@ class OrdersServiceTest {
         movieEntity.setId(id);
         movieDTO = new MovieDTO(id, name, releaseYear, description);
 
-        orderEntity = new OrderEntity(movieEntity, ticketQuantity, createDate, null);
+        orderEntity = new OrderEntity(movieEntity, ticketQuantity,
+                orderNumber, createDate, null);
         orderEntity.setId(id);
-        orderDTO = new OrderDTO(id, id, ticketQuantity);
+        orderDTO = new OrderDTO(id, id, ticketQuantity, orderNumber);
     }
 
     @Test

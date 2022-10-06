@@ -111,12 +111,14 @@ class OrdersControllerTest {
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setMovieId(100);
         orderDTO.setTicketQuantity(2);
+        orderDTO.setOrderNumber(3456789063L);
 
         mockMvc.perform(post("/order")
                         .content(objectMapper.writeValueAsString(orderDTO))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.movieId").value(orderDTO.getMovieId()))
                 .andExpect(jsonPath("$.ticketQuantity").value(orderDTO.getTicketQuantity()))
+                .andExpect(jsonPath("$.orderNumber").value(orderDTO.getOrderNumber()))
                 .andExpect(status().isCreated());
     }
 

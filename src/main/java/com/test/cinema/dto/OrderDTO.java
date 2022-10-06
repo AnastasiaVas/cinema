@@ -30,4 +30,8 @@ public class OrderDTO {
     @Min(value = 1, message = "ticket quantity should be a at least 1",
             groups = {CreateChecks.class, UpdateChecks.class})
     private Integer ticketQuantity;
+
+    @NotNull(message = "orderNumber should be filled on create",
+            groups = CreateChecks.class)
+    private Long orderNumber;
 }

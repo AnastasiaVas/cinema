@@ -24,6 +24,9 @@ public class OrderEntity extends BaseEntity {
     @Column(name = "quantity", nullable = false)
     private Integer ticketQuantity;
 
+    @Column(name = "number", nullable = false)
+    private Long orderNumber;
+
     @Column(name = "create_date", nullable = false)
     @CreationTimestamp
     private Timestamp createDate;

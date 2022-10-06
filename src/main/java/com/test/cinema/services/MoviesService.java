@@ -26,7 +26,6 @@ public class MoviesService {
     public List<MovieDTO> findByFields(List<SearchCriteria> searchCriteria, Integer pageNum, Integer pageSize) {
         Page<MovieEntity> movies = entityService
                 .findEntityPageByFields(searchCriteria, pageNum, pageSize, moviesRepository);
-        System.out.println("page content " + movies.getContent());
         return movies.stream()
                 .map(movieDTOMapper::movieEntityToMovieDTO)
                 .toList();

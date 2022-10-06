@@ -39,6 +39,7 @@ class EntityServiceTest {
     private static OrderEntity orderEntity;
 
     private static Integer ticketQuantity;
+    private static Long orderNumber;
     private static Timestamp createDate;
     private static OrderDTO orderDTO;
     private static MovieDTO movieDTO;
@@ -60,15 +61,17 @@ class EntityServiceTest {
         String description = "Movie 1 description";
         Integer releaseYear = 1998;
         ticketQuantity = 3;
+        orderNumber = 12345678901L;
         createDate = Timestamp.from(Instant.now());
         movieEntity = new MovieEntity(name, releaseYear,
                 description, null, createDate, null);
         movieEntity.setId(id);
         movieDTO = new MovieDTO(id, name, releaseYear, description);
 
-        orderEntity = new OrderEntity(movieEntity, ticketQuantity, createDate, null);
+        orderEntity = new OrderEntity(movieEntity, ticketQuantity,
+                orderNumber, createDate, null);
         orderEntity.setId(id);
-        orderDTO = new OrderDTO(id, id, ticketQuantity);
+        orderDTO = new OrderDTO(id, id, ticketQuantity, orderNumber);
     }
 
     @Test

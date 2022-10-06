@@ -1,0 +1,173 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
+  - changeSet:
+      id: 1
+      author: author
+      changes:
+        - createTable:
+            tableName: movies
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: release_year
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: create_date
+                  type: timestamp without time zone
+              - column:
+                  name: update_date
+                  type: timestamp without time zone
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: movie_id
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: create_date
+                  type: timestamp without time zone
+              - column:
+                  name: update_date
+                  type: timestamp without time zone
+  - changeSet:
+      id:  2
+      author:  author
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name:  id
+                  value:  100
+              - column:
+                  name: name
+                  value: Movie 1
+              - column:
+                  name: description
+                  value: Movie 1 description
+              - column:
+                  name: release_year
+                  value: 1998
+              - column:
+                  name: create_date
+                  value: '2022-10-04 20:51:02'
+            tableName:  movies
+        - insert:
+            columns:
+              - column:
+                  name:  id
+                  value: 101
+              - column:
+                  name: name
+                  value: Movie 2
+              - column:
+                  name: description
+                  value: Movie 2 description
+              - column:
+                  name: release_year
+                  value: 2000
+              - column:
+                  name: create_date
+                  value: '2022-6-04 20:51:02'
+              - column:
+                  name: update_date
+                  value: '2022-10-04 20:51:02'
+            tableName:  movies
+        - insert:
+            columns:
+              - column:
+                  name:  id
+                  value: 102
+              - column:
+                  name: name
+                  value: Movie 3
+              - column:
+                  name: description
+                  value: Movie 3 description
+              - column:
+                  name: release_year
+                  value: 2009
+              - column:
+                  name: create_date
+                  value: '2022-6-04 20:51:02'
+            tableName:  movies
+        - insert:
+            columns:
+              - column:
+                  name:  id
+                  value: 100
+              - column:
+                  name: movie_id
+                  value: 100
+              - column:
+                  name: quantity
+                  value: 3
+              - column:
+                  name: create_date
+                  value: '2022-10-04 20:51:02'
+            tableName:  orders
+        - insert:
+            columns:
+              - column:
+                  name:  id
+                  value: 101
+              - column:
+                  name: movie_id
+                  value: 101
+              - column:
+                  name: quantity
+                  value: 1
+              - column:
+                  name: create_date
+                  value: '2022-6-04 20:51:02'
+              - column:
+                  name: update_date
+                  value: '2022-10-04 20:51:02'
+            tableName:  orders
+        - insert:
+            columns:
+              - column:
+                  name:  id
+                  value: 102
+              - column:
+                  name: movie_id
+                  value: 101
+              - column:
+                  name: quantity
+                  value: 5
+              - column:
+                  name: create_date
+                  value: '2022-6-04 20:51:02'
+              - column:
+                  name: update_date
+                  value: '2022-10-04 20:51:02'
+            tableName:  orders
